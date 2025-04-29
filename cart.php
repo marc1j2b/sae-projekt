@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebShop</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <section id="header">
-        <a href="#"><img scr="img/logo.png" class="logo" alt=""></a>
+        <a href="#"><img src="img/logo.png" class="logo" alt="WebShop Logo"></a>
 
         <div>
             <ul id="navbar">
@@ -22,60 +22,54 @@
                 <a href="#" id="close"><i class="far fa-times"></i></a>
             </ul>    
         </div>
+
         <div id="mobile">
-            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <a href="cart.php"><i class="far fa-shopping-bag"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
 
     <section id="page-header">
-
         <h2>#let's_talk</h2>
-
         <p>LEAVE A MESSAGE, We love to hear from you!</p>
-
     </section>
 
     <section id="cart" class="section-p1">
         <table width="100%">
             <thead>
                 <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
+                    <th>Remove</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="#"><i class="far fa-timee-circle"></a></i></td>
-                    <td><img src="img/products/f1.jpg" alt=""></td>
-                    <td>Cartoon Astronout T-Shirt</td>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="img/products/f1.jpg" alt="Product Image"></td>
+                    <td>Cartoon Astronaut T-Shirt</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>118.19</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$118.19</td>
                 </tr>
-            </tbody>
-            <tbody>
                 <tr>
-                    <td><a href="#"><i class="far fa-timee-circle"></a></i></td>
-                    <td><img src="img/products/f1.jpg" alt=""></td>
-                    <td>Cartoon Astronout T-Shirt</td>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="img/products/f1.jpg" alt="Product Image"></td>
+                    <td>Cartoon Astronaut T-Shirt</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>118.19</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$118.19</td>
                 </tr>
-            </tbody>
-            <tbody>
                 <tr>
-                    <td><a href="#"><i class="far fa-timee-circle"></a></i></td>
-                    <td><img src="img/products/f1.jpg" alt=""></td>
-                    <td>Cartoon Astronout T-Shirt</td>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="img/products/f1.jpg" alt="Product Image"></td>
+                    <td>Cartoon Astronaut T-Shirt</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>118.19</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$118.19</td>
                 </tr>
             </tbody>
         </table>
@@ -85,19 +79,18 @@
         <div id="coupon">
             <h3>Apply Coupon</h3>
             <div>
-                <input type="text" placeholder="Enter Your Coupon">
+                <input type="text" placeholder="Enter Your Coupon" aria-label="Coupon Code">
                 <button class="normal">Apply</button>
-                
             </div>
         </div>
     </section>
 
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="">
+            <img class="logo" src="img/logo.png" alt="WebShop Logo">
             <h4>Contact</h4>
             <p><strong>Phone:</strong> +49 1578 2340502</p>
-            <p><strong>Hours:</strong> 10:00 am - 06:00 pm, Mon - Fr</p>
+            <p><strong>Hours:</strong> 10:00 am - 06:00 pm, Mon - Fri</p>
             <div class="follow">
                 <h4>Follow us</h4>
                 <div class="icon">
@@ -129,16 +122,15 @@
         </div>
 
         <div class="col payment">
-            <h4>Our Payment methods</h4>
-            <img src="img/pay/pay.png" alt="">
+            <h4>Our Payment Methods</h4>
+            <img src="img/pay/pay.png" alt="Payment Methods">
         </div>
 
         <div class="copyright">
             <p>© 2025, pr1me - WebShop</p>
         </div>
-
     </footer>
 
-    <script src"script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

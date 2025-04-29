@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebShop</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <section id="header">
-        <a href="#"><img scr="img/logo.png" class="logo" alt=""></a>
+        <a href="#"><img src="img/logo.png" class="logo" alt="Logo" /></a>
 
         <div>
             <ul id="navbar">
@@ -19,9 +19,10 @@
                 <li><a class="active" href="contact.php">Contact</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li id="lg-bag"><a href="cart.php"><i class="far fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="far fa-times"></i></a>
-            </ul>    
+                <li><a href="#" id="close"><i class="far fa-times"></i></a></li>
+            </ul>
         </div>
+
         <div id="mobile">
             <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
@@ -29,32 +30,29 @@
     </section>
 
     <section id="page-header">
-
         <h2>#let's_talk</h2>
-
         <p>LEAVE A MESSAGE, We love to hear from you!</p>
-
     </section>
 
     <section id="contact-details" class="section-p1">
         <div class="details">
             <span>GET IN TOUCH</span>
-            <h2>Visit one of our agency locations or cantact us today</h2>
+            <h2>Visit one of our agency locations or contact us today</h2>
             <h3>Head Office</h3>
             <div>
-                <li class="fa fa-map"></li>
-                <p>56 Glassford Street Glasgoew NewYork</p>
+                <i class="fa fa-map"></i>
+                <p>56 Glassford Street, Glasgow, New York</p>
             </div>
             <div>
-                <li class="fa fa-envelope"></li>
+                <i class="fa fa-envelope"></i>
                 <p>contact@gmail.com</p>
             </div>
             <div>
-                <li class="fa fa-phone-alt"></li>
-                <p>contact@gmail.com</p>
+                <i class="fa fa-phone-alt"></i>
+                <p>+1 234 567 890</p>
             </div>
             <div>
-                <li class="fa fa-clock"></li>
+                <i class="fa fa-clock"></i>
                 <p>Monday to Friday: 10:00 am to 4:00 pm</p>
             </div>
         </div>
@@ -63,18 +61,17 @@
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
             <h4>Sign up for Newsletter</h4>
-            <p>Get E-Mail updates about our latest shop and <span>special offers</span>
-            </p>
-            <div class="form">
-                <input type="text" placeholder="Your email address">
-                <button class="normal">Sign Up</button>
-            </div>
+            <p>Get E-Mail updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address" />
+            <button class="normal">Sign Up</button>
         </div>
     </section>
-    
+
     <footer class="section-p1">
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="">
+            <img class="logo" src="img/logo.png" alt="Logo" />
             <h4>Contact</h4>
             <p><strong>Phone:</strong> +49 1578 2340502</p>
             <p><strong>Hours:</strong> 10:00 am - 06:00 pm, Mon - Fr</p>
@@ -109,16 +106,15 @@
         </div>
 
         <div class="col payment">
-            <h4>Our Payment methods</h4>
-            <img src="img/pay/pay.png" alt="">
+            <h4>Our Payment Methods</h4>
+            <img src="img/pay/pay.png" alt="Payment Methods" />
         </div>
 
         <div class="copyright">
             <p>© 2025, pr1me - WebShop</p>
         </div>
-
     </footer>
 
-    <script src"script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

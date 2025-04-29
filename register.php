@@ -1,40 +1,37 @@
 <?php
-    require("connection.php");
+require("connection.php");
 
-    if(isset($_POST["submit"])) {
-        var_dump($_POST);
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
+    // Benutzereingaben erfassen
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    // Überprüfen, ob der Benutzername oder die E-Mail schon existieren
+    $stmt = $con->prepare("SELECT COUNT(*) FROM users WHERE username=:username OR email=:email");
+    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
 
-        $stmt = $con->prepare("SELECT * FROM users WHERE username=:username OR email=:email");
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":email", $email);
-        $stmt->execute();
+    // Benutzer existiert bereits
+    if ($stmt->fetchColumn() > 0) {
+        $error = "Username or Email already taken!";
+    } else {
+        // Benutzer registrieren, wenn er nicht existiert
+        registerUser($username, $email, $password);
         header("Location: login.php");
-
-        $userAlreadyExists = $stmt->fetchColumn();
-
-        if(!$userAlreadyExists) {
-            //regestrieren
-            registerUser($username, $email, $password);
-        }
-        else {
-            //user already exists
-        }
-
+        exit(); // Beendet das Skript, um eine doppelte Weiterleitung zu vermeiden
     }
+}
 
-    function registerUser($username, $email, $password) {
-        global $con;
-        $stmt = $con->prepare("INSERT INTO users(username, email, password) VALUES(:username, :email, :password)");
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
-        $stmt->execute();
-    }
-
+function registerUser($username, $email, $password) {
+    global $con;
+    $stmt = $con->prepare("INSERT INTO users(username, email, password) VALUES(:username, :email, :password)");
+    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":password", $password);
+    $stmt->execute();
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,21 +47,28 @@
 <body class="register-page">
     <section id="register" class="register">
         <div class="wrapper">
-            <form action="register.php" method="post">
-                <h1>Create a account</h1>
+            <form action="register.php" method="POST">
+                <h1>Create an account</h1>
+
+                <?php if (isset($error)): ?>
+                    <p style="color:red;"><?= htmlspecialchars($error); ?></p>
+                <?php endif; ?>
+
                 <div class="input-box">
-                    <input type="text" placeholder="Username" name="username" autocomplete="off">
+                    <input type="text" placeholder="Username" name="username" autocomplete="off" required>
                     <i class="bx bx-user"></i>
                 </div>
+
                 <div class="input-box">
-                    <input type="text" placeholder="Email" name="email" autocomplete="off">
-                    
+                    <input type="email" placeholder="Email" name="email" autocomplete="off" required>
                 </div>
+
                 <div class="input-box">
-                    <input type="password" placeholder="Password" name="password" autocomplete="off">
+                    <input type="password" placeholder="Password" name="password" autocomplete="off" required>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
-                <button name="submit" class="btn">Create</button>
+
+                <button type="submit" name="submit" class="btn">Create</button>
             </form>
         </div>
     </section>
